@@ -1,4 +1,4 @@
-(defproject com.signal-ai/throttler "1.0.0-2"
+(defproject com.signal-ai/throttler "1.0.0-3-SNAPSHOT"
   :description "Control the throughput of function calls and core.async channels using the token bucket algorithm"
   :url "https://github.com/signal-ai/throttler"
   :license {:name "Eclipse Public License"
