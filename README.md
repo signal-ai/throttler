@@ -1,5 +1,7 @@
 # Throttler
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.signal-ai/throttler.svg)](https://clojars.org/com.signal-ai/throttler) [![CircleCI](https://circleci.com/gh/signal-ai/throttler.svg?style=shield&circle-token=c4d6462815228d6e0f99ae87fed3aaaa727b8859)](https://circleci.com/gh/signal-ai/throttler)
+
 Throttle the throughput of function calls and `core.async` channels.
 
 Uses the [token bucket algorithm][token] to control both the overall rate as
@@ -7,12 +9,12 @@ well as the burst rate.
 
 Some of its key features:
 
-* Control both average rate and burstiness.
-* Accurate over a large range of rates.
-* Lightweight. Based on [core.async][core-async], does not rely on
+- Control both average rate and burstiness.
+- Accurate over a large range of rates.
+- Lightweight. Based on [core.async][core-async], does not rely on
   `Thread/sleep` so each throttler does not require a dedicated thread. Use as
   many as you want.
-* Throttle a single function/channel or a group under the same rate
+- Throttle a single function/channel or a group under the same rate
   using statistical multiplexing.
 
 [API Docs][docs]
@@ -30,6 +32,23 @@ Some of its key features:
 ```scala
 compile "throttler:throttler:1.0.0"
 ```
+
+## Fork Status
+
+This is a Signal AI fork of [brunoV/throttler](https://github.com/brunoV/throttler).
+
+Changes from master:
+
+- `1.0.0-1`: None - released latest master (1.0.0 is out of date compared to master)
+
+### Releasing
+
+To release, change the version in `project.clj` and push to `master`
+
+Versioning should match:
+
+`0.7.7-1[-SNAPSHOT]`
+where `0.7.7` is the upstream version of spandex, `1` is our fork version, and `-SNAPSHOT` is optional and indicates development releases.
 
 ## Throttling functions
 
@@ -102,7 +121,7 @@ messages/millisecond.
 ## Throttle many functions or channels under the same shared rate
 
 With `chan-throttler` or `fn-throttler` you can limit the combined rate
-of a *group* of channels or functions, respectively.
+of a _group_ of channels or functions, respectively.
 
 Say for instance you want to use a web API, but you want to limit the
 number of calls you make to avoid going beyond your currently paid
@@ -116,7 +135,7 @@ time? In that case you'd be overthrottling some methods and not taking
 full advantage of your calling capacity.
 
 We can do better. To throttle all 3 methods under the same combined
-rate, we create a *function throttler*:
+rate, we create a _function throttler_:
 
 ```clj
 (def api-throttler (fn-throttler 1000 :day))
@@ -171,11 +190,11 @@ under the hood.
 
 Browse the [API Docs][docs] or check out the [blog post][blog] for more.
 
-[token]:      http://en.wikipedia.org/wiki/Token_bucket
-[crit]:       https://github.com/hugoduncan/criterium
-[docs]:       https://brunov.github.io/throttler
+[token]: http://en.wikipedia.org/wiki/Token_bucket
+[crit]: https://github.com/hugoduncan/criterium
+[docs]: https://brunov.github.io/throttler
 [core-async]: https://github.com/clojure/core.async
-[blog]:       http://brunov.org/clojure/2014/05/14/throttler/
+[blog]: http://brunov.org/clojure/2014/05/14/throttler/
 
 ## License
 
