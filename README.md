@@ -1,6 +1,6 @@
 # Throttler
 
-[![Clojars Project](https://img.shields.io/clojars/v/com.signal-ai/throttler.svg)](https://clojars.org/com.signal-ai/throttler) [![CircleCI](https://circleci.com/gh/signal-ai/throttler.svg?style=shield&circle-token=c4d6462815228d6e0f99ae87fed3aaaa727b8859)](https://circleci.com/gh/signal-ai/throttler)
+[![Clojars Project](https://img.shields.io/clojars/v/com.signal-ai/throttler.svg)](https://clojars.org/com.signal-ai/throttler) [![CircleCI](https://circleci.com/gh/signal-ai/throttler.svg?style=shield&circle-token=ddea829bec6a4fb6f133b7cd047b19dd409b541b)](https://circleci.com/gh/signal-ai/throttler)
 
 Throttle the throughput of function calls and `core.async` channels.
 
@@ -40,6 +40,7 @@ This is a Signal AI fork of [brunoV/throttler](https://github.com/brunoV/throttl
 Changes from master:
 
 - `1.0.0-1`: None - released latest master (1.0.0 is out of date compared to master)
+- `1.0.0-2`: Update dependencies
 
 ### Releasing
 
